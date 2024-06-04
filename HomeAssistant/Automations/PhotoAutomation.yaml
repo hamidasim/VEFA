@@ -1,0 +1,254 @@
+alias: Photo Automation
+description: ""
+trigger:
+  - platform: time_pattern
+    minutes: "0"
+condition: []
+action:
+  - if:
+      - condition: not
+        conditions:
+          - condition: time
+            after: "08:50:00"
+            before: "18:10:00"
+    then:
+      - stop: ""
+      - if:
+          - condition: state
+            entity_id: input_boolean.esphome_disable_sleep
+            state: "off"
+        then:
+          - service: button.press
+            data: {}
+            target:
+              entity_id: button.enter_deep_sleep
+        enabled: false
+  - service: button.press
+    data: {}
+    target:
+      entity_id: button.calibrate
+  - wait_template: "{{is_state('binary_sensor.end_stop_2','on') }}"
+    continue_on_timeout: false
+    timeout: "00:01:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 9
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 16
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 25
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 34
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 66
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 74
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 83
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: cover
+    entity_id: cover.rail_stepper_01
+    type: set_position
+    position: 91
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_01','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: 1f55496817ca9d31ba523f851135a978
+    entity_id: switch.shutter
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+mode: single

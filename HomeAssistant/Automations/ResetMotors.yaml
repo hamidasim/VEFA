@@ -1,0 +1,16 @@
+alias: Reset Motors
+description: ""
+trigger:
+  - platform: time_pattern
+    minutes: "15"
+condition: []
+action:
+  - device_id: f9053081a4f5d107fcc3ed43161461de
+    domain: button
+    entity_id: button.rail_01_restart
+    type: press
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: button
+    entity_id: button.rail_02_restart
+    type: press
+mode: single

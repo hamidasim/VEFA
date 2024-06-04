@@ -1,0 +1,244 @@
+alias: Photo Automation 02
+description: ""
+trigger:
+  - platform: time_pattern
+    minutes: "30"
+condition: []
+action:
+  - if:
+      - condition: not
+        conditions:
+          - condition: time
+            after: "08:50:00"
+            before: "18:10:00"
+    then:
+      - stop: ""
+  - service: button.press
+    data: {}
+    target:
+      entity_id: button.calibrate_02
+  - wait_template: "{{is_state('binary_sensor.end_stop_2_02','on') }}"
+    continue_on_timeout: false
+    timeout: "00:01:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 10
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 17
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 25
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 33
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 67
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 75
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 83
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - device_id: a9f0e09f06804c6d8aa019e676d323b1
+    domain: cover
+    entity_id: cover.rail_stepper_02
+    type: set_position
+    position: 91
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 900
+  - wait_template: "{{is_state('binary_sensor.is_stepper_running_02','off') }}"
+    continue_on_timeout: false
+    timeout: "00:00:30"
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 950
+  - type: turn_on
+    device_id: ffdc4bbb2119cb5ab12e2e39c232f301
+    entity_id: switch.shutter_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+mode: single
